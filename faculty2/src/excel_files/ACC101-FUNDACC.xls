@@ -1,0 +1,32 @@
+<table>
+				<tr><th colspan="4">ACC101</th><th colspan="4">FUNDACC</th></tr>
+				<tr style="border: solid thin;">
+					<th>Student Number</th>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Middle Name</th>
+					<th>Quiz #1</th>
+					<th>Quiz #2</th>
+					<th>Quiz #3</th>
+				</tr>
+				<tr style="border: solid thin;">
+					<td>2019-00007</td>
+					<td>c1</td>
+					<td>c1</td>
+					<td>c1</td>
+				</tr>
+		
+				<tr style="border: solid thin;">
+					<td>2019-00008</td>
+					<td>c2</td>
+					<td>c2</td>
+					<td>c2</td>
+				</tr>
+		
+				<tr style="border: solid thin;">
+					<td>2019-00009</td>
+					<td>c3</td>
+					<td>c3</td>
+					<td>c3</td>
+				</tr>
+		</table>

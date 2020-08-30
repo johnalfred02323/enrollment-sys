@@ -1,0 +1,394 @@
+body, html {
+  margin: 0;
+  font-family: Monospace, Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  position: relative !important;
+  margin: 0;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+.fa-coffee {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #ce661c;
+}
+
+.fa-sun-o {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #f9d71c;
+}
+
+.fa-cloud-moon {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #eee;
+}
+
+.grc-logo {
+  text-align: center;
+}
+
+
+
+.bg-logo {
+	background-color: #e01b1b;
+	/*border-radius: 5px 0 0 5px;*/
+  padding: 20px 0px 0px 0px !important;
+  height: auto;
+  background-image: url('../img/logo-dark.png') !important;
+  background-position: 30px 60px !important; 
+  background-repeat: no-repeat !important;
+  background-size: 600px !important;
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: none;
+  height: 350px;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 60px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 15px;
+    background: none;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  opacity: 0.5;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+  opacity: 0.5;
+}
+
+
+
+.title { 
+  color: #fff;
+  font-family: Arial;
+  margin-bottom: 15px;
+}
+
+.text{
+  color: #fff;
+  font: italic 17px Arial, serif;
+  line-height: 2;
+}
+
+
+.trt{
+  color: #fff;
+  font: italic 20px Arial, serif;
+  line-height: 3;
+}
+
+
+
+
+
+.form-group {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  display: block;
+  height: 36px;
+  width: 100%;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 300;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid #aaa;
+  color: #000;
+}
+
+.form-control:focus {
+  border-bottom: 2px solid #e83b35;
+  outline: none;
+  box-shadow: none;
+  color: #000;
+}
+
+.form-highlight {
+  position: absolute;
+  height: 60%;
+  width: 60px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.form-control:focus ~ .form-highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  -ms-animation: inputHighlighter 0.3s ease;
+  -o-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+.float-label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 16px;
+  color: #999;
+  font-weight: 300;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+}
+
+.form-control:focus ~ .float-label, .form-control:valid ~ .float-label {
+  top: -15px;
+  font-size: 12px;
+}
+
+.form-group erroru, .form-group errorp {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 38px;
+	font-size: 11px;
+	color: #d34336;
+	font-weight: 300;
+	transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+	-moz-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+	-webkit-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -ms-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -o-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+	opacity: 0;
+}
+
+.form-group erroru i,.form-group errorp i {
+	position: absolute;
+	right: 0;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	float: right;
+}
+
+.form-group erroru i svg, .form-group errorp i svg {
+	fill:#d34336;
+}
+
+.form-group[errr] .float-label {
+	color: #d34336 !important;
+}
+
+.form-group[errr] .form-control {
+	border-bottom: 1px solid #d34336 !important;	
+}
+
+.form-group[errr] .form-control:focus {
+	border-bottom: 2px solid #d34336 !important;	
+}
+
+
+.form-group[errr] erroru, .form-group[errr] errorp  {
+	opacity: 1;
+}
+
+
+.button-login {
+	position: relative;
+	float: right;
+	font-family: inherit;
+	font-weight: 300;
+	font-size: 15px;
+	border: 0;
+	padding: 10px 35px;
+	border-radius: 2px;
+	cursor: pointer;
+	background: #e83b35;
+	color: #fff;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  margin-bottom: 30px;
+}
+
+.button-login:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.20), 0 8px 15px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+}
+
+.button-login:focus {
+	outline: none;
+}
+
+
+
+[ripple] {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: box-shadow .4s;
+  -moz-transition: box-shadow .4s;
+  -ms-transition: box-shadow .4s;
+  -o-transition: box-shadow .4s;
+  transition: box-shadow .4s;
+  cursor: pointer;
+}
+
+[ripple] .touch {
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  border-radius: 100%;
+}
+
+
+
+/*footer*/
+#footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 4em;
+  letter-spacing: 2px;
+  color:  #999;
+  font-size: 14px; 
+  font-family: Open Sans, sans-serif ;
+}
+
+
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(100px,0,0);
+        overflow:hidden;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(100px,0,0);
+        overflow:hidden;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+    opacity: 0;
+      overflow-y: hidden;
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////////*/
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+
+  .button-login {
+  width: 100%;
+  float: none;
+  }
+
+
+  #footer {
+  font-size: 12px;
+  }
+
+}

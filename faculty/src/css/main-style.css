@@ -1,0 +1,379 @@
+body, html {
+  margin: 0;
+  font-family: Monospace, Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  height:100%;
+}
+
+
+.wrapper {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+
+.container {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+
+
+/*input start*/
+.form-group {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 300;
+  background-color: #fff;
+  color: #000;
+  border-radius: 3px;
+  -webkit-transition: border-radius 0.9s ease-in-out;
+  transition: border-radius 0.9s ease-in-out;
+}
+
+.user {
+  background-image: url('User_20px.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px 20px 12px 40px;
+}
+
+.pass {
+  background-image: url('Key_17px.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px 20px 12px 40px;
+}
+
+.form-control:focus {
+  border-bottom: 2px solid #e83b35;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-highlight {
+  position: absolute;
+  height: 60%;
+  width: 60px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.form-control:focus ~ .form-highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  -ms-animation: inputHighlighter 0.3s ease;
+  -o-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+.float-label {
+  position: absolute;
+  left: 35px;
+  top: 10px;
+  font-size: 16px;
+  color: #999;
+  font-weight: 300;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+}
+
+.form-control:focus ~ .float-label, .form-control:valid ~ .float-label {
+  top: -15px;
+  left: 0px;
+  font-size: 12px;
+}
+
+.form-group erroru, .form-group errorp, .form-group errorem {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 45px;
+  font-size: 11px;
+  color: #d34336;
+  font-weight: 300;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -moz-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -webkit-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -ms-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -o-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  opacity: 0;
+}
+
+.form-group erroru i,.form-group errorp i,.form-group errorem i {
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  float: right;
+}
+
+.form-group erroru i svg, .form-group errorp i svg, .form-group errorem i svg {
+  fill:#d34336;
+}
+
+.form-group[errr] .float-label {
+  color: #d34336 !important;
+}
+
+.form-group[errr] .form-control {
+  border: 1px solid #d34336 !important;
+}
+
+.form-group[errr] .form-control:focus {
+  border-bottom: 2px solid #d34336 !important;
+}
+
+
+.form-group[errr] erroru, .form-group[errr] errorp, .form-group[errr] errorem  {
+  opacity: 1;
+}
+
+
+.login-btn {
+  position: relative;
+  float: right;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 15px;
+  border: 0;
+  padding: 10px 35px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #e83b35;
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+
+.login-btn:hover {
+  background: #e83b35;
+}
+
+.login-btn:focus {
+  outline: none;
+}
+
+.reg-btn {
+  position: relative;
+  float: right;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 15px;
+  border: 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #1769ff;
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  margin-right: 13px;
+
+}
+
+.reg-btn:hover {
+  background: #1769ff;
+}
+
+.reg-btn:focus {
+  outline: none;
+}
+
+[ripple] {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: box-shadow .4s;
+  -moz-transition: box-shadow .4s;
+  -ms-transition: box-shadow .4s;
+  -o-transition: box-shadow .4s;
+  transition: box-shadow .4s;
+  cursor: pointer;
+}
+
+[ripple] .touch {
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  border-radius: 100%;
+}
+/*input end*/
+
+
+
+/*footer*/
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 4em;
+  letter-spacing: 2px;
+  color:  #999;
+  font-size: 14px;
+  font-family: Open Sans, sans-serif ;
+}
+
+
+
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,100px,0);
+        overflow:hidden;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,100px,0);
+        overflow:hidden;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+
+
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+
+  .login-btn {
+  width: 100%;
+  float: none;
+  }
+
+  .reg-btn {
+  width: 100%;
+  float: none;
+  }
+
+
+  .container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+
+  .conn {
+    padding: 40px;
+  }
+
+
+  #footer {
+    font-size: 12px;
+  }
+
+
+}
+
+.alert-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    z-index: 9999;
+    top: 1em;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    max-width: 300px;
+    width: auto;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    display: flex;
+    letter-spacing: 0.03em;
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.warning {
+    color: #fff;
+    background-color: #ff9800;
+    border-color: #ff9800;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+  .alert-box {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+}
+
+.create-acc {
+  cursor: pointer;
+  color: #1769ff;
+}

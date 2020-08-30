@@ -1,0 +1,4 @@
+# robots.txt file for GRC Portal
+
+User-Agent: *
+Disallow: /

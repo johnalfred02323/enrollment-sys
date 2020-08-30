@@ -1,0 +1,69 @@
+.form-group error_cff,.form-group error_cfl, .form-group error_cfm, .form-group error_cfu, .form-group error_cfp, .form-group error_cfcp, .form-group error_cfcn, .form-group error_cfe, .form-group error_op, .form-group error_np, .form-group error_cnp, .form-group error_change_u, .form-group error_change_p {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 38px;
+  font-size: 11px;
+  color: #d34336;
+  font-weight: 300;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -moz-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -webkit-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -ms-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  -o-transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
+  opacity: 0;
+}
+
+.form-group error_cff i,.form-group error_cfl i,.form-group error_cfm i,.form-group error_cfu i,.form-group error_cfp i,.form-group error_cfcp i,.form-group error_cfcn i,.form-group error_cfe i, .form-group error_op i, .form-group error_np i, .form-group error_cnp i, .form-group error_change_u i, .form-group error_change_p i {
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  float: right;
+}
+
+.form-group error_cff i svg, .form-group error_cfl i svg, .form-group error_cfm i svg, .form-group error_cfu i svg, .form-group error_cfp i svg, .form-group error_cfcp i svg, .form-group error_cfcn i svg, .form-group error_cfe i svg, .form-group error_op i svg, .form-group error_np i svg, .form-group error_cnp i svg, .form-group error_change_u i svg, .form-group error_change_p i svg {
+  fill: #d34336;
+}
+
+.form-group[errr] .float-label {
+  color: #d34336 !important;
+}
+
+.form-group[errr] .form-control {
+  border-bottom: 1px solid #d34336 !important;
+}
+
+.form-group[errr] .form-control:focus {
+  border-bottom: 2px solid #e83b35 !important;
+  background-color: transparent;
+}
+
+
+.form-group[errr] error_cff, .form-group[errr] error_cfl, .form-group[errr] error_cfm, .form-group[errr] error_cfu, .form-group[errr] error_cfp, .form-group[errr] error_cfcp, .form-group[errr] error_cfcn, .form-group[errr] error_cfe, .form-group[errr] error_op, .form-group[errr] error_np, .form-group[errr] error_cnp, .form-group[errr] error_change_u, .form-group[errr] error_change_p {
+  opacity: 1;
+}
+
+.cus-btn {
+  position: relative;
+  float: right;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 15px;
+  border: 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  margin-right: 13px;
+}
+
+.pri {
+  background: #1769ff;
+}
+
+.sec {
+  background: #e83b35;
+}

@@ -1,0 +1,32 @@
+<table>
+				<tr><th colspan="4">BA101</th><th colspan="4">MGT1</th></tr>
+				<tr style="border: solid thin;">
+					<th>Student Number</th>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Middle Name</th>
+					<th>Quiz #1</th>
+					<th>Quiz #2</th>
+					<th>Quiz #3</th>
+				</tr>
+				<tr style="border: solid thin;">
+					<td>2019-00004</td>
+					<td>b1</td>
+					<td>b1</td>
+					<td>b1</td>
+				</tr>
+		
+				<tr style="border: solid thin;">
+					<td>2019-00005</td>
+					<td>b2</td>
+					<td>b2</td>
+					<td>b2</td>
+				</tr>
+		
+				<tr style="border: solid thin;">
+					<td>2019-00006</td>
+					<td>b3</td>
+					<td>b3</td>
+					<td>b3</td>
+				</tr>
+		</table>

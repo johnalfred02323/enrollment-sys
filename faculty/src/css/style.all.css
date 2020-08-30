@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/*BUTTON CSS START*/
+
+.button {
+  position: relative;
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 15px;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #e83b35;
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  font-family: 'Roboto', sans-serif;
+  min-width: 130px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.button:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.20), 0 8px 15px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+}
+
+.button:focus {
+  outline: none;
+}
+
+
+[ripple] {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: box-shadow .4s;
+  -moz-transition: box-shadow .4s;
+  -ms-transition: box-shadow .4s;
+  -o-transition: box-shadow .4s;
+  transition: box-shadow .4s;
+  cursor: pointer;
+}
+
+[ripple] .touch {
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  border-radius: 100%;
+}
+
+
+/* Responsive Button */
+@media screen and (max-width: 600px) {
+  .button {
+  width: 100%;
+  float: none;
+  }
+
+}
+
+
+/*BUTTON CSS END*/
+
+
+
+
+
+
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+}
+
+
+input,
+textarea,
+select {
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  padding: 0;
+  outline: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  opacity: 1;
+  color: #a9a9a9;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder,
+select:-moz-placeholder {
+  opacity: 1;
+  color: #a9a9a9;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+select::-moz-placeholder {
+  opacity: 1;
+  color: #a9a9a9;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  opacity: 1 !important;
+  color: #a9a9a9 !important;
+}
+input:focus::-ms-value,
+textarea:focus::-ms-value,
+select:focus::-ms-value {
+  background-color: transparent;
+  color: #000000;
+  border-bottom: 2px solid #e01b1b;
+}
+.text-input {
+  display: block;
+  margin-bottom: 15px;
+}
+.text-input input {
+  display: block;
+  font-size: 14px;
+  height: 48px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
+}
+.text-input input:focus {
+  border-bottom: 2px solid #e83b35;
+}
+.text-input input::-ms-clear {
+  display: none;
+}
+.text-input.fancylabel {
+  position: relative;
+}
+.text-input.fancylabel label {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 15px;
+  left: 11px;
+  right: 0;
+  z-index: 1;
+  font-size: 12px;
+  transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  color: #777;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
+}
+.text-input.fancylabel input {
+  transition: padding 0.2s ease-in-out;
+}
+.text-input.fancylabel.filled input {
+  padding-top: 15px;
+}
+.text-input.fancylabel.filled label {
+  opacity: 1;
+  top: 9px;
+}
+
+
+.textarea-input {
+  display: block;
+  margin-bottom: 15px;
+}
+.textarea-input textarea {
+  display: block;
+  font-size: 14px;
+  height: 96px;
+  padding: 10px;
+  width: 100%;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;;
+  letter-spacing: 0.03em;
+}
+.textarea-input textarea:focus 
+{
+  border-bottom: 2px solid #e01b1b;
+}
+.textarea-input.fancylabel {
+  position: relative;
+}
+.textarea-input.fancylabel label {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 15px;
+  left: 2px;
+  z-index: 1;
+  font-size: 12px;
+  transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 5px 0 5px 0;
+  padding: 7px 10px 2px 9px;
+  color: #999;
+  font-family: 'Roboto', sans-serif;;
+  letter-spacing: 0.03em;
+}
+.textarea-input.fancylabel textarea {
+  transition: padding 0.2s ease-in-out;
+}
+.textarea-input.fancylabel.filled textarea {
+  padding-top: 23px;
+}
+.textarea-input.fancylabel.filled label {
+  opacity: 1;
+  top: 1px;
+}
+
+
+.select-input {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+}
+.select-input:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #d8d8d8;
+  pointer-events: none;
+}
+.select-input.selectized:after {
+  border-color: #ffffff;
+}
+.select-input:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 39px;
+  width: 1px;
+  height: 32px;
+  background-color: #d8d8d8;
+  pointer-events: none;
+}
+.select-input select {
+  display: block;
+  font-size: 14px;
+  height: 48px;
+  padding: 5px 48px 5px 10px;
+  width: 100%;
+  color: #000000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #a9a9a9;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.select-input select:focus {
+  color: #000000;
+  border-bottom: 2px solid #e01b1b;
+}
+.select-input select::-ms-expand {
+  display: none;
+}
+.select-input.filled select {
+  color: #000000;
+}
+.select-input.fancylabel {
+  position: relative;
+}
+.select-input.fancylabel label {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 15px;
+  left: 11px;
+  right: 0;
+  z-index: 1;
+  font-size: 12px;
+  transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  color: #999;
+}
+.select-input.fancylabel select {
+  transition: padding 0.2s ease-in-out;
+}
+.select-input.fancylabel.filled select {
+  padding-top: 20px;
+  color: #000000;
+}
+.select-input.fancylabel.filled label {
+  opacity: 1;
+  top: 9px;
+}

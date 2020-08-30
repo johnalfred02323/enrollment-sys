@@ -1,0 +1,238 @@
+#tor-process {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: #fff;
+  margin: 50px auto;
+  position: relative;
+  min-height: 550px;
+}
+
+#tor-process-manual {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: #fff;
+  margin: 50px auto;
+  position: relative;
+  min-height: 550px;
+}
+
+#fieldsets {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30%;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+  margin-left: 35%;
+
+}
+
+#fieldsets-manual {
+  position: absolute;
+  top: 0px;
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+  margin-left: 30%;
+}
+
+@media (max-width: 826px) {
+  #fieldsets {
+    margin-left: 0%;
+    width: 100%;
+    padding-top: 40px;
+  }
+
+  #fieldsets-manual {
+    margin-left: 0%;
+    width: 100%;
+    padding-top: 40px;
+  }
+}
+
+fieldset {
+  border: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  opacity: 0;
+}
+fieldset.current {
+  left: 20px;
+  opacity: 1;
+}
+fieldset.next {
+  left: 640px;
+}
+
+
+
+#process_btn {
+  display: none;
+  border: none;
+}
+#section-tabs {
+  font-size: 0.8em;
+  height: 50px;
+  position: relative;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  padding: 0;
+  font-weight: bold;
+  list-style: none;
+  text-transform: uppercase;
+}
+#section-tabs li {
+  color: #a7a7a7;
+  cursor: not-allowed;
+  border-left: 1px solid #aaa;
+  text-decoration: none;
+  padding: 0 6px;
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  line-height: 30px;
+  background: #ddd;
+  position: relative;
+}
+#section-tabs li span {
+  color: #bababa;
+}
+#section-tabs li.active {
+  color: #444;
+  cursor: pointer;
+}
+#section-tabs li:after {
+  content: "";
+  display: block;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#section-tabs li.current {
+  opacity: 1;
+  background: #fff;
+  z-index: 999;
+  border-left: none;
+}
+#section-tabs li.current:after {
+  border: 15px solid transparent;
+  border-left: 15px solid red;
+}
+
+/* manual */
+#manual_process_btn {
+  display: none;
+  border: none;
+}
+
+fieldset-manual {
+  border: none;
+  position: absolute;
+  width: 100%;
+  height: 85%;
+  padding: 20px 0;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  opacity: 0;
+}
+fieldset-manual.current {
+  left: 0;
+  opacity: 1;
+}
+fieldset-manual.next {
+  left: 640px;
+}
+
+
+#section-tabs-manual {
+  font-size: 0.8em;
+  height: 50px;
+  position: relative;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  padding: 0;
+  font-weight: bold;
+  list-style: none;
+  text-transform: uppercase;
+}
+#section-tabs-manual li {
+  color: #a7a7a7;
+  cursor: not-allowed;
+  border-left: 1px solid #aaa;
+  text-decoration: none;
+  padding: 0 6px;
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  line-height: 30px;
+  background: #ddd;
+  position: relative;
+}
+#section-tabs-manual li span {
+  color: #bababa;
+}
+#section-tabs-manual li.active {
+  color: #444;
+  cursor: pointer;
+}
+#section-tabs-manual li:after {
+  content: "";
+  display: block;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#section-tabs-manual li.current {
+  opacity: 1;
+  background: #fff;
+  z-index: 999;
+  border-left: none;
+}
+#section-tabs-manual li.current:after {
+  border: 15px solid transparent;
+  border-left: 15px solid red;
+}
+/* end manual */
+
+.error {
+  color: #bf2424;
+  display: block;
+}
+
+.valid + .valid {
+  display: inline;
+  position: absolute;
+  right: 10px;
+  margin-top: -36px;
+  color: green;
+}
+
+.c-btn {
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+/*form control*/

@@ -1,0 +1,100 @@
+.digit-code {
+  margin-right: 5px; 
+  text-transform: uppercase; 
+  text-align: center;
+}
+
+.blur {
+  background-color: rgba(255,255,255, 0.9);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Opera and Firefox */
+}
+
+.code {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+} 
+.box-code {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase; 
+
+
+  display: block;
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 300;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid #aaa;
+  color: #000;
+}
+
+.box-code:focus {
+  border-bottom: 2px solid #e83b35;
+  outline: none;
+  box-shadow: none;
+  color: #000;
+}
+
+.cp-header {
+      display: none;
+  }
+.cp-view {
+  margin-bottom: 0;
+}
+.dt-view {
+  border: 1px solid #ddd;
+}
+.dt-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.tbl-rows {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .cp-header {
+      display: inline-block;
+      color:#6c757d;
+  }
+  .cp-view {
+      margin-bottom: 1rem !important;
+      border: 1px solid #ddd;
+  }
+  .dt-header {
+      display: none;
+  }
+  .dt-view {
+      border: 0;
+  }
+  .tbl-rows {
+    font-weight: bolder;
+    font-size: 15px;
+  }
+
+}
+

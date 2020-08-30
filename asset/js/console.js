@@ -1,0 +1,1 @@
+//setTimeout(console.log.bind(console, "%cWarning!", "font: 4em Poppins ,sans-serif; color: #FFFFFF; background-color: red; padding: 1em; text-align: center; width: 100%;"), 0);

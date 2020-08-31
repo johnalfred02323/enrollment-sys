@@ -51,12 +51,12 @@ if(isset($_POST['create_account'])) {
 	          $mail->isSMTP();
 	          $mail->SMTPDebug = 1;
 	          $mail->Debugoutput = 'html';                                        // Send using SMTP
-	          $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through 
+	          $mail->Host       = 'smtp.mailtrap.io';                    // Set the SMTP server to send through    smtp.gmail.com
 	          $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-	          $mail->Username   = 'johnalfred0110@gmail.com';                     // SMTP username 
-	          $mail->Password   = 'xslnagtdztdxpdsf';                               // SMTP password  
-	          $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-	          $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+	          $mail->Username   = 'a4f3cd05b7b771';                     // SMTP username     johnalfred0110@gmail.com
+	          $mail->Password   = 'cbd92518456904';                               // SMTP password      xslnagtdztdxpdsf
+	          $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+	          $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above  ssl
 
 	          //Recipients
 	          $mail->setFrom('grc.sample@gmail.com', 'grc no-reply');

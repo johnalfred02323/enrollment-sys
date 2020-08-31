@@ -226,6 +226,11 @@
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 </div>
 
+<div class="alert-box warning">
+  <i class="fas fa-check"></i> <span id="warningmsg">Successful!</span>    
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+</div>
+
 <div class="alert-box failed">
   <i class="far fa-times-circle"></i> <span id="failedmsg">Failed!</span> 
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>

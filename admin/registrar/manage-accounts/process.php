@@ -354,3 +354,19 @@ if(isset($_POST['major'])) {
 		else {echo '<option>No Major</option>';}
 		  
   }
+
+if(isset($_POST['stat_fac_user'])) {
+  $id = $_POST['id'];
+  $get_stat_query = mysqli_query($conn, "SELECT status FROM faculty_user WHERE id = ".$id);
+  $get_stat_res = mysqli_fetch_array($get_stat_query);
+  $stat = $get_stat_res[0];
+
+  if($stat == 1) $new = 0;
+  else if($stat == 0) $new = 1;
+
+  $change = "UPDATE faculty_user SET status = $new WHERE id = $id";
+  if (mysqli_query($conn, $change)) {
+    echo $new;
+    exit();
+  }
+}

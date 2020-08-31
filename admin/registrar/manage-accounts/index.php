@@ -16,6 +16,43 @@ require 'layout/head.php';
 <link rel="stylesheet" type="text/css" href="../../../src/table/css/jquery.dataTables-dark.css">
 
   <title>GRC System | Manage Accounts</title>
+<style>
+  #grclogo_anim {
+    fill:#DA2129;
+    width: 7rem;
+    height: 7rem;
+    animation: logo_bounce 1s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(0.95, 0.15, 0.695, 0.095);
+  }
+
+  .st0{
+    stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;
+  }
+
+  @keyframes logo_bounce{
+    /* from{
+      transform: translateY(0%);
+    }
+    to{
+      transform: translateY(50%);
+    } */
+    0% {
+      transform: translateY(0%) scale(1,1);
+    }
+    50%{
+      transform: translateY(50%) scale(1,.5);
+    }
+    55%{
+      transform: translateY(0%) scale(1,1);
+    }
+    60%{
+      transform: rotateY(0deg);
+    }
+    100%{
+      transform: rotateY(1000deg);
+    }
+  }
+</style>
 
 </head>
 
@@ -180,10 +217,10 @@ require 'layout/head.php';
 
 <!-- Modal Start -->
 <div class="modal fade" id="create_account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Create Account</h5>
+          <h5 class="modal-title">Create Faculty Account</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true"><i class="fas fa-times"></i></span>
           </button>
@@ -250,7 +287,7 @@ require 'layout/head.php';
             <div class="col-lg-6">
 
               <div id="cf_cn" class="form-group">
-                <input type="text" id="new_fac_contact_num" spellcheck=false class="form-control" type="text" maxlength="11" alt="login" required="" autocomplete='off'>
+                <input type="text" id="new_fac_contact_num" spellcheck=false class="form-control" type="text" maxlength="13" alt="login" required="" autocomplete='off' value="+639">
                   <span class="form-highlight"></span>
                     <span class="form-bar"></span>
                     <label for="new_fac_contact_num" class="float-label" style="font-family:Arial, FontAwesome">Contact Number</label>
@@ -303,7 +340,7 @@ require 'layout/head.php';
         </div>
         <div class="modal-footer">
 
-        <h5><button class="btn btn-danger" data-dismiss="modal" onclick="$('input').val('');$('#contact_num').val('+639');">Cancel</button> <button class="btn btn-primary" id="create_fac_account_btn">Create Account</button></h5>
+        <h5><button class="btn btn-danger" data-dismiss="modal" onclick="$('input').val('');$('#new_fac_contact_num').val('+639');">Cancel</button> <button class="btn btn-primary" id="create_fac_account_btn">Create Account</button></h5>
 
         </div>
       </div>
@@ -332,6 +369,31 @@ require 'layout/head.php';
   </div>
 </div>
 
+<div class="modal fade" id="loading_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+      <!-- <div class="text-light">Loading....</div> -->
+      <svg version="1.1" id="grclogo_anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 602 488" style="enable-background:new 0 0 602 488;" xml:space="preserve">
+          
+            <path class="st0" d="M421,103c-20.75-0.44-35-2-52,9c-7,5-18,13-24,30c-12.11,34.33-21.92,76.67-23,83c-8,47-39.56,85.77-78,84
+	c-34.32-1.58-62.35-32.51-63.93-66.84C178.3,203.72,208.95,172,247,172c17.59,0,47.56,13.5,61.28,36.93
+	c0.46,0.78,1.63,0.59,1.82-0.29c1.92-8.72,6.03-25.67,11.36-44.26c0.1-0.36,0-0.74-0.26-1C301.1,143.64,272.24,132,247,132
+	c-59.6,0-107.82,48.73-106.99,108.52c0.8,57.63,47.92,108.72,105.47,105.47c34.06-1.93,57.2-12.42,74.52-28.99
+	c18.55-17.74,30.28-42.49,37-73c3.22-14.61,19-85,31-97c9-9,16-8,35-8l161.85,1.97c0.5,0.01,0.92-0.35,1-0.85l5.1-32.71
+	c0.1-0.61-0.37-1.16-0.99-1.15C564.14,106.56,446.01,103.53,421,103z"/>
+            <path class="st0" d="M456,145c-35-0.85-49,15-55,32c-10,32-14,49-17,64c-14.54,72.71-64.1,133-137,133s-133-58.55-133-132
+	s59.1-133,132-133c31.37,0,60.14,8.91,82.79,27.18c0.54,0.44,1.35,0.21,1.57-0.45c0.54-1.59,1.09-3.17,1.64-4.73
+	c4.72-13.38,12.53-21.17,19.06-26.32c0.51-0.4,0.52-1.18,0.01-1.58C321.8,79.99,285.44,68,245,68c-94.99,0-172,77.01-172,172
+	s77.01,172,172,172c106,0,163.7-75.66,180-168c3-17,6.42-31.68,9-42c2-8,4.58-14.47,9-18c5-4,11.13-3,21-3l114.42,1.22
+	c0.5,0.01,0.92-0.35,1-0.85l5.33-34.18c0.09-0.6-0.37-1.15-0.98-1.15L456,145z"/>
+            <path class="st0" d="M476,186.01c-16,6-19.57,42.87-22,57c-21,122-97.2,193.33-206,193.33S51,348.89,51,241.01
+	S139.2,45.68,248,45.68c56.91,0,87.6,9.88,131.78,46.64c8.52-1.06,17.51-0.54,28.22-0.32c4.49,0.1,11.99,0.27,21.41,0.49
+	c-0.01-0.1-0.05-0.19-0.12-0.28C382,37,317.36,9.01,247,9.01c-130.34,0-236,104.77-236,234s105.66,234,236,234
+	s227.09-100.41,243-233c3-25,7-22,17-22c14.07,0,58.32,0.72,65.08,0.83c0.5,0.01,0.93-0.35,1-0.85l5.44-34.85
+	c0.09-0.6-0.36-1.14-0.96-1.15C566.74,185.77,482.55,184.13,476,186.01z"/>
+      </svg>
+    </div>
+  </div> <!-- Modal End -->
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -462,7 +524,7 @@ $('#fac_user_table').on('click', '.stat_btn', function(){
         $("#warningmsg").html('User has been Disabled');
       }
       $('#fac_user_table').DataTable().destroy();
-      fetch_data();
+      fetch_faculty_data();
     }
   });
 });
@@ -473,8 +535,8 @@ var fname = $('#new_fac_firstname'),
     user = $('#new_fac_username'),
     pass = $('#cp_new_password'),
     confirm_pass = $('#confirm_pass'),
-    contact = $('#contact_num'),
-    email = $('#email'),
+    contact = $('#new_fac_contact_num'),
+    email = $('#new_fac_email'),
     err_fn = $('error_cff'),
     err_ln = $('error_cfl'),
     err_mn = $('error_cfm'),
@@ -549,10 +611,10 @@ pass.blur(function(){
 });
 
 $('#create_fac_account_btn').click(function(){
-  var firstname = $('#firstname').val(), lastname = $('#lastname').val(), middlename = $('#middlename').val(), username = $('#username').val(), contact_number = $('#contact_num').val(), em = $('#email').val();
+  var firstname = $('#new_fac_firstname').val(), lastname = $('#new_fac_lastname').val(), middlename = $('#new_fac_middlename').val(), username = $('#new_fac_username').val(), contact_number = $('#new_fac_contact_num').val(), em = $('#new_fac_email').val();
 
 
-  if(fname.val() == '' || lname.val() == '' || mname.val() == '' || user.val() == '' || email.val() == '' || contact.val() == '+639') {
+  if(fname.val() == '' || lname.val() == '' || mname.val() == '' || user.val() == '' || email.val() == '' || contact.val() == '' || contact.val() == '+639') {
     if (fname.val() == '') {
       fdiv.attr('errr','');
     } else {
@@ -585,7 +647,13 @@ $('#create_fac_account_btn').click(function(){
       cndiv.removeAttr('errr');
     }
 
-    if (contact.length != 11) {
+    if (contact.val() == '+639') {
+      cndiv.attr('errr','');
+    } else {
+      cndiv.removeAttr('errr');
+    }
+
+    if (contact.val().length != 13) {
       cndiv.attr('errr','');
       err_cn.find('span').html('Contact Number is invalid');
     } else {
@@ -593,41 +661,43 @@ $('#create_fac_account_btn').click(function(){
     }
   }
   else{
-    if (contact.val().length != 11) {
-      cndiv.attr('errr','');
-      err_cn.find('span').html('Contact Number is invalid');
-    }
-    else{
-      $.ajax({
-        url:"create_account_process.php",
-        method:"POST",
-        data:{"create_account":1,firstname:firstname,lastname:lastname,middlename:middlename,contact_number:contact_number,username:username,em:em},
-        success:function(data) {
-          alert(data);
-          if(data == "0"){
-            udiv.attr('errr','');
-            err_un.find('span').html('User already exists.');
-            $( "div.failed" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
-            $("#failedmsg").html('Username already exists. Please try new one.');
-          }
-          else if(data == "2"){
-            ediv.attr('errr','');
-            err_e.find('span').html('Email already exists.');
-            $( "div.failed" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
-            $("#failedmsg").html('Email already exists. Please try new one.');
-          }
-          else{
-            $( "div.success" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
-            $("#successmsg").html('Account was Created Successfully. <br> Note: Inform the faculty to look into spam mails.');
-            $('#create_account').modal('hide');
-            $('input').val('');
-            $('#contact_num').val('');
-            $('#fac_user_table').DataTable().destroy();
-            fetch_data();
-          }
+    $('#loading_modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+    $('#create_account').modal('hide');
+    $.ajax({
+      url:"create_account_process.php",
+      method:"POST",
+      data:{"create_account":1,firstname:firstname,lastname:lastname,middlename:middlename,contact_number:contact_number,username:username,em:em},
+      success:function(data) {
+        console.log(data);
+        if(data == "0"){
+          udiv.attr('errr','');
+          err_un.find('span').html('User already exists.');
+          $( "div.failed" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+          $("#failedmsg").html('Username already exists. Please try new one.');
+          $('#create_account').modal('show');
         }
-      });
-    }
+        else if(data == "2"){
+          ediv.attr('errr','');
+          err_e.find('span').html('Email already exists.');
+          $( "div.failed" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+          $("#failedmsg").html('Email already exists. Please try new one.');
+          $('#create_account').modal('show');
+        }
+        else{
+          $( "div.success" ).fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+          $("#successmsg").html('Account was Created Successfully. <br> Note: Inform the faculty to look into spam mails.');
+          $('#create_account').modal('hide');
+          $('input').val('');
+          $('#contact_num').val('');
+          $('#fac_user_table').DataTable().destroy();
+          fetch_faculty_data();
+        }
+        $('#loading_modal').modal('hide');
+      }
+    });
   }
 });
 });

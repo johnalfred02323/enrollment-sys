@@ -16,7 +16,7 @@ if(isset($_POST['create_account'])) {
 	$mname = $_POST['middlename'];
 	$contact_num = $_POST['contact_number'];
 	$user = $_POST['username'];
-  $email =  $_POST['em'];
+  	$email =  $_POST['em'];
 
 	$code = 'GRC_FACULTY_'.(generateCode(5,false,'ld'));
 	$pass = password_hash($code, PASSWORD_ARGON2I);
@@ -51,10 +51,10 @@ if(isset($_POST['create_account'])) {
 	          $mail->isSMTP();
 	          $mail->SMTPDebug = 1;
 	          $mail->Debugoutput = 'html';                                        // Send using SMTP
-	          $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+	          $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through 
 	          $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-	          $mail->Username   = 'villainy123123@gmail.com';                     // SMTP username
-	          $mail->Password   = 'wwutxqhbsbfgwmtd';                               // SMTP password
+	          $mail->Username   = 'johnalfred0110@gmail.com';                     // SMTP username 
+	          $mail->Password   = 'xslnagtdztdxpdsf';                               // SMTP password  
 	          $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 	          $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
@@ -64,8 +64,39 @@ if(isset($_POST['create_account'])) {
 
 	          // Content
 	          $mail->isHTML(true);                                  // Set email format to HTML
-	          $mail->Subject = 'GRC Faculty System Credentials';
-	          $mail->Body    = 'Hello Mr/Ms. '.$lname.', your email has been registered in the GRC Faculty System. <br> This is your login credentials: <br> Username: <b>'.$user.'</b> <br> Password: <b>'.$code.'</b> <br> Note: Your credentials can be change in the system using the user account settings. Thank you.';
+			  $mail->Subject = 'GRC Faculty System Credentials';
+			//   $mail->Body    = 'Hello Mr/Ms. '.$lname.', your email has been registered in the GRC Faculty System. <br> This is your login credentials: <br> Username: <b>'.$user.'</b> <br> Password: <b>'.$code.'</b> <br> Note: Your credentials can be change in the system using the user account settings. Thank you.';
+			  $mail->Body = '
+			  	<div style="font-family: sans-serif;line-height: 1.5;">
+					<div style="margin-left: auto; margin-right:auto; height:auto; width:100%;">
+						<div style="background-color: #DA2129; text-align: center; padding: 1rem;justify-content: center;align-items: center; display:block;">
+							
+							<span style="font-style: italic;color: rgba(226,232,240,1);margin-left: auto;margin-right:auto;font-size: 1.875rem;">Global Reciprocal Colleges</span>
+						</div>
+						<div style="padding: 2rem;display: flex;background-color: rgba(237,242,247,1); margin:0 auto;">
+							<div style="width: 66.666667%;text-align: center;padding: .5rem;background-color: rgba(226,232,240,1);">
+								<div style="color: rgba(45,55,72,1);font-size: 1.25rem;">
+									Good Day Mr/Ms. '.$lname.', <br/> your email has been registered in the GRC Enrollment System. You can login using these credentials and make modifications in the GRC Enrollment System account settings to change the given password.
+								</div>
+								<div style="margin-top: 2rem;margin-bottom: 2rem;">
+									<div style="color: rgba(45,55,72,1);font-size: 1.125rem;">
+										Username
+									</div>
+									<div style="width: 16rem;color: rgba(45,55,72,1);text-align: center;padding: .25rem;margin-left: auto;margin-right:auto;font-family: Menlo,Monaco,Consolas,monospace;background-color: rgba(236,201,75,1);">
+											'.$user.'
+									</div>
+									<div style="color: rgba(45,55,72,1);font-size: 1.125rem;">
+										Password
+									</div>
+									<div style="width: 16rem;color: rgba(45,55,72,1);text-align: center;padding: .25rem;margin-left: auto;margin-right:auto;font-family: Menlo,Monaco,Consolas,monospace;background-color: rgba(236,201,75,1);">
+											'.$code.'
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		  		</div>
+			  ';
 	          // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 	          if($mail->send()){

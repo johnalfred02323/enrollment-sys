@@ -24,6 +24,7 @@ require 'config/config.php';
         <meta name="theme-color" content="#fa5252">
     
         <link href="asset/css/mystyle.css" rel="stylesheet">
+        <link href="asset/css/main.css" rel="stylesheet">
         
         <script src="src/vendor/jquery/jquery.min.js"></script>
 
@@ -127,14 +128,18 @@ require 'config/config.php';
                                 </div>                                
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="Gender"><b style="color:red">*</b> Gender</label>
-                                    <select id="gender" class="form-control"/>
-                                    <option disabled hidden selected>Choose Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <select>
-                                </div>                               
+                                <label for="Gender"><b style="color:red">*</b> Gender</label>
+                                <div class="d-flex mt-1">
+                                    <label class="container-radio mx-2">Male
+                                        <input type="radio" checked="checked" id="male" name="gender">
+                                        <span class="checkmark-radio"></span>
+                                    </label>
+                                    <label class="container-radio mx-2">Female
+                                        <input type="radio" id="female" name="gender">
+                                        <span class="checkmark-radio"></span>
+                                    </label>                             
+
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -207,8 +212,14 @@ require 'config/config.php';
                             </div>                                                        
                         </div>
 
-                        <h4>Education Background History Form</h4>
-                        <div class="row mb-5">
+                        <h4>Educational Background Form</h4>
+                        <div class="my-5">
+                            <label class="container-check">ALS Graduate
+                                <input type="checkbox" id="als_grad_chckbox">
+                                <span class="checkmark-check"></span>
+                            </label>  
+                        </div>
+                        <div class="row my-5">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="PrimarySchoolYear"><b style="color:red">*</b> Primary School Name</label>
@@ -222,21 +233,34 @@ require 'config/config.php';
                                 </div>                                
                             </div>
                         </div>
-                        <div class="row mb-5">    
-                            <div class="col-lg-6">
+                        <div class="row my-5">    
+                            <div class="col-md">
                                 <div class="form-group">
                                     <label for="SecondarySchoolName"><b style="color:red">*</b> Secondary School Name</label>
                                     <input type="text" id="secschname" class="form-control"/>
                                 </div>                                
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-md">
                                 <div class="form-group">
                                     <label for="SecondarySchoolYear"><b style="color:red">*</b>Year Graduated</label>
                                     <input type="text" id="secschyear" class="form-control" placeholder="0000"/>
                                 </div>                                
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-md" id="senior_high_checkbox">
+                                <label class="container-check mt-4">Senior High
+                                    <input type="checkbox" id="senior_high">
+                                    <span class="checkmark-check"></span>
+                                </label> 
+                            </div>
+                        </div>
+                        <div class="row my-5" id="senior_high_form" style="display: none;">    
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="SecondarySchoolName"><b style="color:red">*</b> Secondary School Name</label>
+                                    <input type="text" id="secseniorschname" class="form-control"/>
+                                </div>                                
+                            </div>
+                            <div class="col-md">
                                 <div class="form-group">
                                     <label for="SecondarySchoolStrand">Secondary School Strand</label>
                                     <select id="secschstrand" class="form-control"/>
@@ -255,6 +279,12 @@ require 'config/config.php';
                                     <select>
                                 </div>                                
                             </div> 
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="SecondarySchoolYear"><b style="color:red">*</b>Year Graduated</label>
+                                    <input type="text" id="secseniorschyear" class="form-control" placeholder="0000"/>
+                                </div>                                
+                            </div>
                         </div>
                         <div class="row mb-5" id="tertiary" style="display: none">                              
                             <div class="col-lg-6">
@@ -275,7 +305,7 @@ require 'config/config.php';
                                     <input type="text" id="terschcourse" class="form-control"/>
                                 </div>                                
                             </div>                                                       
-                        </div>        
+                        </div> 
 
                     <div class="d-flex justify-content-end mt-5 mb-5">
                         <button class="btn animate-up-2 mr-2 mb-2 btn-icon btn-danger" id="save_btn" type="button">
@@ -339,6 +369,48 @@ require 'config/config.php';
 
 </body>
 <script type="text/javascript">
+$('#als_grad_chckbox').change(function(){
+    if($(this).prop('checked')) {
+        $('#senior_high').prop('checked', false);
+        $('#senior_high_form').hide();
+        $('#senior_high_checkbox').hide();
+    }
+    else {
+        $('#senior_high_checkbox').show();
+        $('#senior_high').prop('checked', false);
+    }
+});
+
+$('#senior_high').change(function(){
+    if($(this).prop('checked')) {
+        $('#senior_high_form').show();
+    }
+    else{
+        $('#senior_high_form').hide();
+    }
+});
+
+var school_num = 0;
+
+$('#school_tbl').on('click', '.add_school', function(){
+
+    var tbl = $('#school_tbl tr:last');
+    tbl.after('<tr id="school_row_'+school_num+'"><td><div class="form-group"><label for="PrimarySchoolYear"><b style="color:red">*</b> School Name</label><input type="text" id="school_name" class="form-control"/></div></td><td><div class="form-group"><label for="PrimarySchoolYear"><b style="color:red">*</b>Year Graduated</label><input type="text" id="prischyear" class="form-control" placeholder="0000" /></div></td><td><div class="form-group"><label for="SecondarySchoolStrand">School Type</label><select id="school_type" class="form-control"><option value="" disabled hidden selected>Select School Type</option><option value="Primary School">Primary School</option><option value="Secondary School">Secondary School</option><option value="ALS">ALS</option></select></div></td><td><button class="btn btn-danger remove_row" id="'+school_num+'"><i class="far fa-trash-alt"></i></button></td></tr>');
+    $('#school_name').focus();
+    school_num++;
+});
+
+$('#school_tbl').on('click', '.remove_row', function(){
+    var id = $(this).attr('id');
+    $('#school_row_'+id).remove();
+});
+
+// $('#add_school').click(function(){
+//     $('#school_tab').html('<div class="col-md" id="school_row_'+school_num+'"><div class="form-group"><label for="PrimarySchoolYear"><b style="color:red">*</b> School Name</label><input type="text" id="prischname" class="form-control"/></div></div><div class="col-md"><div class="form-group"><label for="PrimarySchoolYear"><b style="color:red">*</b>Year Graduated</label><input type="text" id="prischyear" class="form-control" placeholder="0000" /></div></div><div class="col-md"><div class="form-group"><label for="SecondarySchoolStrand">School Type</label><select id="school_type" class="form-control"><option value="" disabled hidden selected>Select School Type</option><option value="Primary School">Primary School</option><option value="Secondary School">Secondary School</option><option value="ALS">ALS</option></select></div></div><div class="col-md-2 d-flex align-items-center"><button class="btn btn-danger"><i class="far fa-trash-alt"></i></button></div>');
+//     school_num++;
+//     console.log(school_num);
+// });
+
 
  $(document).on('change','#stu_orientation', function(){   
     if($(this).val() == 'Freshman')
@@ -362,7 +434,7 @@ require 'config/config.php';
     var stu_orientation = $('#stu_orientation').val();
     var con_num = $('#connum').val();
     var length = $("#connum").val().length;
-    var gender = $('#gender').val();
+    var gender = '';
     var email = $('#email').val();
     var date = $('#bday').val();
     var datearray = date.split("/");
@@ -386,6 +458,13 @@ require 'config/config.php';
     var t_school_name = $('#terschname').val();
     var t_school_year = $('#terschyear').val();
     var t_school_course = $('#terschcourse').val();
+
+    if($('#male').is(':checked')) {
+        gender = 'Male';
+    }
+    else {
+        gender = 'Female'
+    }
 
    if(fname == '' || lname == '' || stu_orientation == null || stutype == null || stutype == "" || gender == null || con_num == '' || length != '11' || email == '' || date == '' || bplace == '' || nat == ''  || houseadd == '' || city == '' || prov == '' || p_school_name == '' || p_school_year == '' || s_school_name == '' || s_school_year == ''){
       if(fname == ''){
